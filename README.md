@@ -1,4 +1,4 @@
-## Welcome to the companion repository for the manuscript entitled "Wing shape and environmental energy are associated with molecular evolutionary rates in ovenbirds (Furnariidae)", 
+## Welcome to the companion repository for the manuscript entitled *Wing shape and environmental energy are associated with molecular evolutionary rates in ovenbirds (Furnariidae)*
 ### by David A. Duchene, Paola A. Montoya, and Carlos D. Cadena.
 
 This respository contains the molecular data alignments used in this study. Specifically, the data sets include the mitochondrial (*mitochondrial_data.fasta*), nuclear (*nuclear_data.fasta*), and combined data sets (*combined_data.fasta*).
