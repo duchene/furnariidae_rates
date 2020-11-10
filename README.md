@@ -1,16 +1,35 @@
 ## Welcome to the companion repository for the manuscript entitled *Wing shape and environmental energy niche breadth are associated with molecular evolutionary rates in a large avian radiation*
 ### by David A. Duchene, Paola A. Montoya, and Carlos D. Cadena.
 
-This respository contains the molecular data alignments used in this study. Specifically, the data sets include the mitochondrial (*mitochondrial_data.fasta*), nuclear (*nuclear_data.fasta*), and combined data sets (*combined_data.fasta*).
+This respository contains the molecular data alignments used in this study. Specifically, the data sets include the mitochondrial (*mitochondrial_dna.fasta*) and nuclear (*nuclear_dna.fasta*) DNA sequence alignments used.
 
-In addition, the repository contains a data file to be read in R using the "load" function (*data_tables_and_trees.Rdata*). The elements found in this file are the following:
+In addition, the repository contains a data file to be read in R using the "load" function. Use the following code in R to load the data:
 
-*table_mitochondrial* - the data frame with mitochondrial molecular evolutionary rate estimates, hand-wing index, and environmental energy for each of the species for which these data were available
+```coffee
+library(caper)
+load("path-to-repository/pgls.data.Rdata")
+```
 
-*table_nuclear* - as table_mitochondrial but including nuclear molecular evolutionary rate estimates
+The following is a list of the elements included:
 
-*table_overall_rates* - as table_mitochondrial but including the molecular evolutionary rate estimates including all the molecular data available
+#### Analyses of the association between flight habit and wing metrics
 
-*tree_mitochondrial_taxa* - the time-tree used for regression analyses as estimated in the original phylogenetic study of the phylogenetics and diversification of furnariidae (Derryberry et al. 2011, Evolution, 65(10), 2973-2986). The tree was pruned to contain the data for which mitochondrial molecular evolutionary rates could be estamated with confidence
+*flight.score.data* - data frame with data on the flight score, wing loading, and hand-wing index.
 
-*tree_nuclear_taxa* - as tree_mitochondrial_taxa but including the taxa for which nuclear molecular evolutionary rates could be estimated with confidence
+*furn.tree.genera* - tree of genera of furnariidae extracted from the original phylogenetic study of the phylogenetics and diversification of furnariidae (Derryberry et al. 2011, Evolution, 65(10), 2973-2986).
+
+*models.flight.score* - list containing two pgls regression objects, examining the associationamong the flight habit score and each of wing loading and hand-wing index, respectively.
+
+#### Analyses of the association between molecular evolutionary rates and wing metrics and environmental energy
+
+*table.mitochondrial* - the data frame with mitochondrial molecular evolutionary rate estimates, wing loading, hand-wing index, and environmental energy for each of the species for which these data were available.
+
+*table.nuclear* - as table_mitochondrial but including nuclear molecular evolutionary rate estimates.
+
+*furn.tree.mitochondrial* - the time-tree taken from the original phylogenetic study and used for regression analyses, pruned to contain the data for which mitochondrial molecular rates could be estamated with confidence.
+
+*furn.tree.nuclear* - as furn.tree.mitochondrial but including the taxa for which nuclear molecular rates could be estimated with confidence.
+
+*models.wl* - list containing two elements for each of mitochondiral data and nuclear data. In each, three pgls regression models can be found, for each of *dN*, *dS*, and *dN/dS*, all including wing loading in the explanatory variables.
+
+*models.hwi* - as *models.wl* but including the hand-wing index in the explanatory variables.
